@@ -129,7 +129,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		args := strings.Split(cmd, " ")
+		args := shlex(cmd)
 
 		switch strings.ToLower(args[0]) {
 		case "search":
