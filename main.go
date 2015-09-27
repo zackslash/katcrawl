@@ -12,6 +12,7 @@ import (
 	Q "github.com/PuerkitoBio/goquery"
 	"github.com/olekukonko/tablewriter"
 	"github.com/peterh/liner"
+	"github.com/vrischmann/shlex"
 )
 
 func makeURL(name string, searchPage int) string {
@@ -129,7 +130,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		args := shlex(cmd)
+		args := shlex.Parse(cmd)
 
 		switch strings.ToLower(args[0]) {
 		case "search":
