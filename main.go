@@ -104,11 +104,11 @@ func magnet(args []string) (err error) {
 		return err
 	}
 
-	magnet, ok := doc.Find(".magnetlinkButton").Attr("href")
+	magnet, ok := doc.Find(".icon16").Last().Prev().Attr("href")
 	if !ok {
 		return errors.New("the magnet link does not exist")
 	}
-
+	
 	fmt.Println(magnet)
 
 	return
