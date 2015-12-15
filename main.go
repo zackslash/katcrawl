@@ -134,10 +134,18 @@ func main() {
 
 		switch strings.ToLower(args[0]) {
 		case "search":
+		    if len(args) <= 1 {
+		        fmt.Printf("Invalid search argument\n")
+		        break
+		    }
 			if err := search(args[1:]); err != nil {
 				fmt.Fprintf(os.Stderr, "%v\n", err)
 			}
 		case "magnet":
+		    if len(args) <= 1 {
+		        fmt.Printf("Invalid selection\n")
+		        break
+		    }
 			if err := magnet(args[1:]); err != nil {
 				fmt.Fprintf(os.Stderr, "%v\n", err)
 			}
